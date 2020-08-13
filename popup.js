@@ -1,6 +1,6 @@
 function fetch() {
   chrome.tabs.query({currentWindow: true, active: true}, function(tabs){
-    var a = "https://developers.google.com/structured-data/testing-tool/?hl=en&url=" + tabs[0].url;
+    var a = "https://search.google.com/test/rich-results?url=" + tabs[0].url;
 	window.open(a);
 });
   }
