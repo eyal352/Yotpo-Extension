@@ -2,31 +2,33 @@
   "manifest_version": 2,
 
   "name": "Yotpo Support Tool",
-  "description": "This is an internal Yotpo support tool.  It extracts the appkey, product ID, checks for star ratings.  Also used to test Rich Snippets",
+  "description": "The internal Yotpo support tool. Extracts appkey, product ID, and Star Ratings.  Also for testing Rich Snippets",
   "version": "1.0",
 
-  "icons": {"48" : "icon.png"},
+  "icons": {
+    "48": "icon.png"
+  },
   "author": "Yotpo Support",
   "homepage_url": "https://www.yotpo.com",
 
   "browser_action": {
     "default_icon": "icon.png",
     "default_popup": "popup.html",
-	 "default_title": "Yotpo!"
+    "default_title": "Yotpo!"
   },
   "permissions": [
     "tabs",
-	"activeTab",
+    "activeTab",
     "https://ajax.googleapis.com/"
   ],
-  
+
   "content_scripts": [{
-  "js" : ["jquery.js", "content.js" ],
-  "matches" : ["http://*/*", "https://*/*"]
+    "js": ["jquery.js", "content.js"],
+    "matches": ["http://*/*", "https://*/*"]
   }],
-  
-  "background":{
-  "scripts":["background.js"],
-  "persistent": false
+
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
   }
 }
