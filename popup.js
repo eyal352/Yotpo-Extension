@@ -1,5 +1,6 @@
 function fetch() {
   chrome.tabs.query({currentWindow: true, active: true}, function(tabs){
+	  //update Google's rich snippet URL
     var a = "https://search.google.com/test/rich-results?url=" + tabs[0].url;
 	window.open(a);
 });
