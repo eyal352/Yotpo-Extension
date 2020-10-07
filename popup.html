@@ -5,41 +5,75 @@
  value "popup.html".
  -->
 <html>
-  <head>
-    <title>POPUP</title>
-    <style>
-      body {
-        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
-        font-size: 100%;
-      }
-	  
-	  ul{
-		width: 500px;
-	  }
-	  
-	  li div{
-			display: inline-block;
-			}
-	  
-    
-    </style>
 
-    <!--
+<head>
+  <title>Yotpo Inner Page PopOut</title>
+  <style>
+    body {
+      font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+      font-size: 100%;
+      width: 500px;
+      color: #3e3b3b;
+      position: relative;
+    }
+
+    ul {
+      padding-left: 18px;
+    }
+
+    li {
+      font-weight: normal;
+    }
+
+    li div {
+      display: inline-block;
+      font-weight: bold;
+    }
+
+    #snippet input {
+      cursor: pointer;
+      background-color: #2e84ed;
+      border-radius: 5px;
+      border: none;
+      padding: 4px 10px;
+    }
+
+    div.help-center {
+      margin: 1rem 0;
+      font-size: 12px;
+    }
+
+    .yotpo-logo {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+  </style>
+
+  <!--
       - JavaScript and HTML must be in separate files: see our Content Security
       - Policy documentation[1] for details and explanation.
       -
       - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
      -->
-    <script src="popup.js"></script>
-  </head>
-  <body>
-<ul>
-    <li>Appkey:&nbsp;<div id="appkey"></div></li>
-	
-	<li>Stars:&nbsp;<div id="bottomline"></div></li>
-	<li>Product ID:&nbsp;<div id="id"></div></li>
-</ul>
-<div id="snippet"></div>
-  </body>
-</html>
+  <script src="popup.js"></script>
+</head>
 
+<body>
+  <ul>
+    <li>Appkey:&nbsp;<div id="appkey"></div>
+    </li>
+    <li>Stars:&nbsp;<div id="bottomline"></div>
+    </li>
+    <li>Product ID:&nbsp;<div id="id"></div>
+    </li>
+  </ul>
+  <div id="snippet"></div>
+  <div class="help-center">Need help? <a href="https://support.yotpo.com/en/" target="_blank"
+      rel="noopener noreferrer">Check out our Support Center</a></div>
+
+  <img class="yotpo-logo" src="https://www.yotpo.com/wp-content/themes/yotpo/images/general/yotpo-logo-v2.svg"
+    alt="Yotpo logo">
+</body>
+
+</html>
