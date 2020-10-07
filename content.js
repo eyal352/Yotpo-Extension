@@ -30,7 +30,7 @@ function findAppkey(pattern){
 chrome.extension.onMessage.addListener(function(message, sender, sendResponse) {
     switch(message.init) {
         case "go":
-		console.log("Find APpkey!");
+		console.log("Find Appkey!");
             //var app_key = findAppkey(/staticw2.yotpo.com.(\w*)/);
 			//console.log(app_key);
 			var stuff = findAppkey(/staticw2.yotpo.com.(\w*)/);
