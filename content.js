@@ -4,6 +4,7 @@ function findAppkey(pattern){
   var bottomline;
   var id;
   var test;
+  var findPlatform;
   
   if (n === null){
 	  //console.log("no Appkey here");
@@ -22,7 +23,22 @@ function findAppkey(pattern){
 		  id = $('.yotpo-main-widget').attr('data-product-id');
 		}
   }
-  var snoo={appkey: appkey, bottomline: bottomline, id: id , test: test};
+
+  platform = function(){
+	let platformNames = ['shopify', 'bigcommerce', 'Magento', 'woocommerce'];
+	let currentPlatform;
+
+	platformNames.forEach(platform => {
+		if($(`script[src*=\'${platform}\']`).length === 0){
+			return
+		} else {
+			currentPlatform = platform
+		}
+	})
+	return currentPlatform;
+  }
+
+  var snoo={appkey: appkey, bottomline: bottomline, id: id , test: test, platform: platform()};
   return snoo;
 }
 
@@ -34,6 +50,7 @@ chrome.extension.onMessage.addListener(function(message, sender, sendResponse) {
             //var app_key = findAppkey(/staticw2.yotpo.com.(\w*)/);
 			//console.log(app_key);
 			var stuff = findAppkey(/staticw2.yotpo.com.(\w*)/);
+			//data object sent to popup.js
 			sendResponse({data: stuff});
         break;
     }
