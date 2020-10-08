@@ -3,7 +3,7 @@
 
   "name": "Yotpo Support Tool",
   "description": "The internal Yotpo support tool. Extracts appkey, product ID, and Star Ratings.  Also for testing Rich Snippets",
-  "version": "1.4",
+  "version": "1.5",
 
   "icons": {
     "48": "icon.png"
