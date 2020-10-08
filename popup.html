@@ -30,7 +30,8 @@
       font-weight: bold;
     }
 
-    #snippet input {
+    #snippet input,
+    #jsbin button {
       cursor: pointer;
       background-color: #2e84ed;
       border-radius: 5px;
@@ -51,6 +52,38 @@
 
     #platform {
       text-transform: capitalize;
+    }
+
+    #jsbin {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    #jsbin img {
+      width: 50px;
+    }
+
+    .tooltip {
+      visibility: hidden;
+      position: absolute;
+      width: 290px;
+      background-color: #555;
+      color: #fff;
+      text-align: center;
+      padding: 5px 0;
+      border-radius: 6px;
+      z-index: 1;
+      opacity: 0;
+      transition: opacity .6s;
+      bottom: 81%;
+      left: 71%;
+      font-size: 11px;
+    }
+
+    #jsbin:hover .tooltip {
+      visibility: visible;
+      opacity: 1;
     }
   </style>
 
@@ -79,6 +112,12 @@
     </li>
   </ul>
   <div id="snippet"></div>
+  <div id="jsbin">
+    <button id="jsbinButton">COPY CODE SNIPPET & PASTE TO JS BIN</button>
+    <span class="tooltip">Clicking the button will add the Reviews and Star Ratings widget code to your clipboard and
+      open a new tab in order to paste into JS Bin </span>
+    <img src="https://static.jsbin.com/images/dave.min.svg" alt="JS Bin logo">
+  </div>
   <div class="help-center">Need help? <a href="https://support.yotpo.com/en/" target="_blank"
       rel="noopener noreferrer">Check out our Support Center</a></div>
   <img class="yotpo-logo" src="https://www.yotpo.com/wp-content/themes/yotpo/images/general/yotpo-logo-v2.svg"
